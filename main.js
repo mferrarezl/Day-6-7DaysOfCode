@@ -64,6 +64,7 @@ var mamaeHTML = document.getElementById('limamae');
 var delmamae = document.getElementById('btnremovemamae');
 
 const erro = `Por favor, preencha o campo com o nome do item.`;
+const errado = `A categoria que deseja remover o produto está vazia. Po favor, selecione a categoria correta.`
 
 var prdt = document.getElementById('produto');
 
@@ -241,66 +242,105 @@ function addMamae() {
 
 function delCong() {
     congelados.pop();
+    if (congelados == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delCafe() {
     cafedamanha.pop();
+    if (cafedamanha == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delHigi() {
     higieneebeleza.pop();
+    if (higieneebeleza == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delHort() {
     hortifrutis.pop();
+    if (hortifrutis == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delAcou() {
     acougue.pop();
+    if (acougue == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delFrio() {
     frioselaticinios.pop();
+    if (frioselaticinios == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delLimp() {
     limpeza.pop();
+    if (limpeza == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delBazar() {
     bazar.pop();
+    if (bazar == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delFest() {
     festivos.pop();
+    if (festivos == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delMerc() {
     mercearia.pop();
+    if (mercearia == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delBebi() {
     bebidas.pop();
+    if (bebidas == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delPet() {
     petshop.pop();
+    if (petshop == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
 function delMamae() {
     mamaeebebe.pop();
+    if (mamaeebebe == "") {
+        alert(errado);
+    }
     perguntarNovamente();
 }
 
