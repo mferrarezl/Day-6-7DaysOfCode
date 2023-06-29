@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Organizador - Day5 #7DaysOfCode</title>
+</head>
+
+<body class="apresentacao">
+    <header>
+        <h1 class="apresentacao__titulo"><span id="spantitulo">Organize-se</span> e faça sua lista do supermercado!</h1>
+    </header>
+    <section class="apresentacao__conteudo">
+
+        <div class="apresentacao__iniciar" id="comeco">
+            <button class="apresentacao__botao__iniciar" onclick="comecar()">INICIAR</button>
+        </div>
+
+        <div class="apresentacao__conteudo__divs" id="inicio">
+            <p class="apresentacao__paragrafo">Você deseja adicionar algo à sua lista de compras?</p>
+            <button class="apresentacao__botoes" id="adicionar" name="adicionar" onclick="novoProduto()">Sim</button>
+            <button class="apresentacao__botoes" id="finalizar" name="finalizar" onclick="encerrarLista()">Não</button>
+        </div>
+
+        <div class="apresentacao__conteudo__divs" id="remover">
+            <p class="apresentacao__paragrafo">Você deseja remover o último item da sua lista?</p>
+            <button class="apresentacao__botoes" id="tirar" name="tirar" onclick="removerProduto()">Remover</button>
+        </div>
+        
+        <div class="apresentacao__conteudo__divs" id="produtos">
+            <p class="apresentacao__paragrafo">O que você deseja adicionar à sua lista de compras?</p>
+            <input id="produto" class="apresentacao__input" type="text">
+        </div>
+
+        <div class="apresentacao__conteudo__divs" id="categorias">
+            <p class="apresentacao__paragrafo">Em qual categoria este produto/alimento se encaixa?</p>
+            <button class="apresentacao__botoes" id="btncong" onclick="addCong()">Congelados</button> 
+            <button class="apresentacao__botoes" id="btncafe" onclick="addCafe()">Café da Manhã</button>
+            <button class="apresentacao__botoes" id="btnhigi" onclick="addHigi()">Higiene e Beleza</button>
+            <button class="apresentacao__botoes" id="btnhort" onclick="addHort()">Hortifrútis</button>
+            <button class="apresentacao__botoes" id="btnacou" onclick="addAcou()">Açougue</button>
+            <button class="apresentacao__botoes" id="btnfrios" onclick="addFrios()">Frios e Laticínios</button>
+            <button class="apresentacao__botoes" id="btnlimp" onclick="addLimp()">Limpeza</button>
+            <button class="apresentacao__botoes" id="btnbazar" onclick="addBazar()">Bazar</button>
+            <button class="apresentacao__botoes" id="btnfest" onclick="addFest()">Festivos</button>
+            <button class="apresentacao__botoes" id="btnmerc" onclick="addMerc()">Mercearia</button>
+            <button class="apresentacao__botoes" id="btnbebi" onclick="addBebi()">Bebidas</button>
+            <button class="apresentacao__botoes" id="btnpet" onclick="addPet()">Petshop</button>
+            <button class="apresentacao__botoes" id="btnmamae" onclick="addMamae()">Mamãe e Bebê</button>
+        </div>
+
+        <div class="apresentacao__conteudo__divs" id="removeritem">
+            <p class="apresentacao__paragrafo">Deseja remover o último item de qual categoria?</p>
+            <button class="apresentacao__botoes" id="btnremovecong" onclick="delCong()">Congelados</button> 
+            <button class="apresentacao__botoes" id="btnremovecafe" onclick="delCafe()">Café da Manhã</button>
+            <button class="apresentacao__botoes" id="btnremovehigi" onclick="delHigi()">Higiene e Beleza</button>
+            <button class="apresentacao__botoes" id="btnremovehort" onclick="delHort()">Hortifrútis</button>
+            <button class="apresentacao__botoes" id="btnremoveacou" onclick="delAcou()">Açougue</button>
+            <button class="apresentacao__botoes" id="btnremovefrios" onclick="delFrio()">Frios e Laticínios</button>
+            <button class="apresentacao__botoes" id="btnremovelimp" onclick="delLimp()">Limpeza</button>
+            <button class="apresentacao__botoes" id="btnremovebazar" onclick="delBazar()">Bazar</button>
+            <button class="apresentacao__botoes" id="btnremovefest" onclick="delFest()">Festivos</button>
+            <button class="apresentacao__botoes" id="btnremovemerc" onclick="delMerc()">Mercearia</button>
+            <button class="apresentacao__botoes" id="btnremovebebi" onclick="delBebi()">Bebidas</button>
+            <button class="apresentacao__botoes" id="btnremovepet" onclick="delPet()">Petshop</button>
+            <button class="apresentacao__botoes" id="btnremovemamae" onclick="delMamae()">Mamãe e Bebê</button>remove
+        </div>
+
+        <div class="apresentacao__conteudo__divs" id="lista">
+            <h1 class="apresentacao__titulo">Sua Lista</h1>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Congelados: </span><var id="licong"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Café da Manhã: </span><var id="licafe"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Higiene e Beleza: </span><var id="lihigi"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Hortifrutis: </span><var id="lihort"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Açougue: </span><var id="liacou"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Frios e Laticínios: </span><var id="lifrio"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Limpeza: </span><var id="lilimp"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Bazar: </span><var id="libazar"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Festivos: </span><var id="lifest"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Mercearia: </span><var id="limerc"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Bebidas: </span><var id="libebi"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">PetShop: </span><var id="lipet"></var></p>
+            <p class="apresentacao__paragrafo"><span id="spanparagrafo">Mamãe e Bebê: </span><var id="limamae"></var></p>
+        </div>
+
+        <!-- <div class="apresentacao__conteudo__divs" id="lista">
+            <h1 class="apresentacao__titulo">Sua Lista</h1>
+            <p><span>Congelados:</span>${congelados}</p>
+        </div> -->
+
+        <!-- <div class="apresentacao__conteudo__divs" id="lista">
+
+                <p class="apresentacao__paragrafo">Congelados: <var id="licong"></var></p>
+                <p class="apresentacao__paragrafo">Café da Manhã: <var id="licafe"></var></p>
+                <p class="apresentacao__paragrafo">Higiene e Beleza: <var id="lihigi"></var></p>
+                <p class="apresentacao__paragrafo">Hortifrútis: <var id="lihort"></var></p>
+                <p class="apresentacao__paragrafo">Açougue: <var id="liacou"></var></p>
+                <p class="apresentacao__paragrafo">Frios e Laticínios: <var id="lifrio"></var></p>
+                <p class="apresentacao__paragrafo">Limpeza: <var id="lilimp"></var></p>
+                <p class="apresentacao__paragrafo">Bazar: <var id="libazar"></var></p>
+                <p class="apresentacao__paragrafo">Festivos: <var id="lifest"></var></p>
+                <p class="apresentacao__paragrafo">Mercearia: <var id="limerc"></var></p>
+                <p class="apresentacao__paragrafo">Bebidas: <var id="libebi"></var></p>
+                <p class="apresentacao__paragrafo">Petshop: <var id="lipet"></var></p>
+                <p class="apresentacao__paragrafo">Mamãe e Bebê: <var id="limamae"></var></p>
+        </div> -->
+
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>
